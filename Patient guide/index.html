@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyoor - מדריך למשתמש</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Heebo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --pyoor-pink: #FF414D;
+            --pyoor-text: #56585B;
+            --white: #FFFFFF;
+            --border-color: #EEEEEE;
+            --bg-soft: #FFF9FA;
+            --shadow: 0 4px 15px rgba(255, 65, 77, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: var(--white);
+            color: var(--pyoor-text);
+            line-height: 1.6;
+            padding-bottom: 90px;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .welcome-hero {
+            padding: 50px 0 35px;
+            text-align: center;
+        }
+
+        .welcome-hero h1 {
+            font-family: 'Heebo', sans-serif;
+            font-weight: 900;
+            font-size: 2.6rem;
+            margin-bottom: 15px;
+            color: var(--pyoor-pink);
+            line-height: 1.1;
+        }
+
+        .section {
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-header i {
+            color: var(--white);
+            font-size: 1.6rem;
+            background: var(--pyoor-pink);
+            width: 54px;
+            height: 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            box-shadow: 0 4px 10px rgba(255, 65, 77, 0.2);
+        }
+
+        .section-header h2 {
+            font-family: 'Heebo', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--pyoor-pink);
+        }
+
+        h3 {
+            font-family: 'Heebo', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            color: var(--pyoor-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3::before {
+            content: '';
+            width: 5px;
+            height: 22px;
+            background: var(--pyoor-pink);
+            display: inline-block;
+            border-radius: 3px;
+        }
+
+        .list-items {
+            list-style: none;
+        }
+
+        .list-items li {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 14px;
+            font-size: 1.1rem;
+        }
+
+        .list-items i {
+            color: var(--pyoor-pink);
+            font-size: 1.1rem;
+            margin-top: 5px;
+            flex-shrink: 0;
+        }
+
+        strong {
+            font-weight: 800;
+        }
+
+        .emphasis-box {
+            background-color: var(--bg-soft);
+            border-right: 6px solid var(--pyoor-pink);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px 16px 16px 4px;
+            font-weight: 600;
+        }
+
+        .info-card {
+            background: #F8F9FA;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .grid-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .grid-card {
+            padding: 25px 15px;
+            text-align: center;
+            border: 1.5px solid var(--border-color);
+            border-radius: 20px;
+            background: var(--white);
+        }
+
+        .grid-card i {
+            font-size: 2.2rem;
+            color: var(--pyoor-pink);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .grid-card strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--pyoor-pink);
+        }
+
+        /* Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            box-shadow: 0 -8px 30px rgba(0,0,0,0.05);
+            z-index: 1000;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #B0B2B5;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .nav-link i { font-size: 1.3rem; margin-bottom: 4px; }
+        .nav-link:hover { color: var(--pyoor-pink); }
+
+        /* Keep in Touch */
+        .keep-in-touch {
+            padding: 50px 20px;
+            background-color: var(--bg-soft);
+            text-align: center;
+            border-radius: 30px;
+            margin: 40px 0;
+        }
+
+        .keep-in-touch h2 {
+            font-family: 'Heebo';
+            font-weight: 800;
+            color: var(--pyoor-pink);
+            margin-bottom: 15px;
+        }
+
+        /* Minimal Footer Styling */
+        .footer-minimal {
+            background-color: #F8F9FA;
+            padding: 60px 20px 80px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        .footer-minimal h2 {
+            font-family: 'Heebo';
+            font-weight: 800;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: var(--pyoor-text);
+        }
+
+        .footer-minimal p.sub-text {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 35px;
+        }
+
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--white);
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            color: var(--pyoor-text);
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: var(--transition);
+        }
+
+        .contact-item i {
+            color: var(--pyoor-pink);
+            font-size: 1.2rem;
+        }
+
+        .contact-item:hover {
+            border-color: var(--pyoor-pink);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .whatsapp-tag {
+            background: #25D366;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 480px) {
+            .contact-grid { flex-direction: column; align-items: stretch; }
+            .contact-item { justify-content: center; }
+        }
+
+        .list-item-img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .section-img {
+            width: 65%;
+            border-radius: 16px;
+            margin: 20px auto 0;
+            display: block;
+        }
+
+        .header-logo {
+            height: 60px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.png" alt="pyoor" class="header-logo">
+    </header>
+
+    <div class="container">
+
+        <div class="welcome-hero">
+            <h1>החיוך שלך מתחיל כאן</h1>
+            <p>הקשתיות השקופות של <strong>pyoor</strong> כבר אצלכם בידיים. הנה כל מה שצריך לדעת כדי לעבור את התהליך בכיף ולהגיע לתוצאה מושלמת.</p>
+        </div>
+
+        <!-- Section: Box Contents -->
+        <div class="section" id="box">
+            <div class="section-header">
+                <i class="fa-solid fa-box-open"></i>
+                <h2>מה במארז שלך?</h2>
+            </div>
+            <ul class="list-items">
+                <li><img src="images/11.png" alt="" class="list-item-img"> <div><strong>קופסת פלסטיק:</strong> הבית של הקשתיות. הקפידו לאחסן אותן שם כשהן לא בפה.</div></li>
+                <li><img src="images/22.png" alt="" class="list-item-img"> <div><strong>שקיות ממוספרות:</strong> כל שקית מסודרת לפי סדר הטיפול (1 והלאה).</div></li>
+                <li><img src="images/33.png" alt="" class="list-item-img"> <div><strong>שקית RETAINERS:</strong> מסומנת ב-X - אלו המשמרים לסיום הטיפול בלבד.</div></li>
+                <li><img src="images/44.png" alt="" class="list-item-img"> <div><strong>CHEWY (נשכן):</strong> גליל סיליקון שמסייע בהצמדת הקשתיות לשיניים.</div></li>
+                <li><img src="images/55.png" alt="" class="list-item-img"> <div><strong>מסיר קשתיות:</strong> מתחילים מהשיניים הטוחנות (האחוריות ביותר). אל תנסו לשלוף מהשיניים הקדמיות קודם – זה עלול לעקם או לסדוק את הפלסטיק של הקשתית. הכניסו את הוו של המכשיר בין הקשתית לשן בצד הפנימי (הצד שקרוב ללשון או לחך).</div></li>
+            </ul>
+        </div>
+
+        <!-- Section: Usage -->
+        <div class="section" id="usage">
+            <div class="section-header">
+                <i class="fa-solid fa-teeth-open"></i>
+                <h2>הנחיות שימוש</h2>
+            </div>
+            <p style="margin-bottom: 15px;"><i class="fa-solid fa-soap" style="color: var(--pyoor-pink); margin-left: 8px;"></i> <strong>חשוב:</strong> שטפו את הידיים במים וסבון לפני הכנסת הקשתיות.</p>
+
+            <h3>איך מכניסים?</h3>
+            <p>הניחו את הקשתית מעל השיניים הקדמיות. לאחר מכן, הפעילו לחץ שווה בעזרת קצות האצבעות על השיניים האחוריות עד שהקשתית מחליקה למקומה.</p>
+            <img src="images/77.png" alt="הכנסת קשתית" class="section-img">
+
+            <div class="emphasis-box">
+                <strong>טיפ מקצועי:</strong>
+                <p style="margin-top: 10px;">עם המעבר לקשתיות חדשות, ייתכן שיופיע רווח קטן בין הקשתית לשיניים. כדי להבטיח התאמה מקסימלית ותהליך יישור אפקטיבי, יש לפעול לפי ההנחיות הבאות:</p>
+                <ul style="margin-top: 15px; padding-right: 20px; list-style: disc;">
+                    <li style="margin-bottom: 10px;"><strong>ב-24 השעות הראשונות:</strong> יש להשתמש בנשכן (Chewy) המצורף למארז, או בפיסת צמר גפן. יש לנשוך את האביזר בין הקשתיות למשך 3 שעות במצטבר לאורך היום.</li>
+                    <li><strong>בהמשך הדרך:</strong> במידת הצורך, מומלץ לחזור על הפעולה במהלך שלושת הימים הראשונים להחלפת הקשתית.</li>
+                </ul>
+                <img src="images/88.png" alt="שימוש בנשכן" class="section-img">
+            </div>
+
+            <h3>איך מסירים?</h3>
+            <p>השתמשו בקצות האצבעות בלבד. התחילו מהצד הפנימי של השיניים האחוריות, שחררו צד אחד ואז את השני.</p>
+            <img src="images/66.png" alt="הסרת קשתית" class="section-img">
+        </div>
+
+        <!-- Section: Comfort & Adaptation -->
+        <div class="section">
+            <div class="section-header">
+                <i class="fa-solid fa-face-smile-beam"></i>
+                <h2>תחושות והסתגלות</h2>
+            </div>
+            <div class="info-card">
+                <p>בפעם הראשונה יתכן ותיווצר תחושה של אי נוחות מסוימת, לחץ קל או פער קטן בין הקשתית לשיניים. זה טבעי לחלוטין!</p>
+            </div>
+            <ul class="list-items">
+                <li><i class="fa-solid fa-circle-info"></i> <div><strong>לחץ משתנה:</strong> הלחץ משתנה מסט לסט כי כל אחד מהם מבצע תנועה עדינה אחרת. התחושה נעלמת מהר מאוד.</div></li>
+                <li><i class="fa-solid fa-droplet-slash"></i> <div><strong>הצטברות רוק:</strong> יתכן ותחושו הצטברות רוק בימים הראשונים - תחושה זו תעבור במהרה.</div></li>
+                <li><i class="fa-solid fa-warning"></i> <div><strong>כאב חד:</strong> במידה וחשתם כאב חד או אי נוחות משמעותית, יש ליצור קשר עם הצוות שלנו או הרופא המטפל מיידית.</div></li>
+            </ul>
+        </div>
+
+        <!-- Section: Hygiene -->
+        <div class="section" id="hygiene">
+            <div class="section-header">
+                <i class="fa-solid fa-sink"></i>
+                <h2>היגיינה ותחזוקה</h2>
+            </div>
+
+            <h3>איך מנקים?</h3>
+            <ul class="list-items">
+                <li><i class="fa-solid fa-soap"></i> <div>שטפו במים פושרים וסבון נוזלי עדין וצחצחו בעדינות עם מברשת רכה.</div></li>
+                <li><i class="fa-solid fa-flask"></i> <div><strong>השריה עמוקה:</strong> ניתן להשרות בתמיסה ייעודית או בטבליות לשיניים תותבות (15-20 דקות), ולאחר מכן לשטוף היטב.</div></li>
+            </ul>
+
+            <div class="emphasis-box">
+                <strong>היגיינת הפה:</strong> אנו ממליצים על צחצוח בוקר וערב, ושימוש בחוט דנטלי לאחר כל ארוחה ולפני לבישת הקשתיות.
+            </div>
+
+            <p><i class="fa-solid fa-user-doctor" style="color: var(--pyoor-pink); margin-left: 8px;"></i> הקפידו על ביקורת קבועה אצל רופא השיניים וביקור תקופתי אצל השיננית להסרת אבנית ופלאק.</p>
+        </div>
+
+        <!-- Section: Warnings -->
+        <div class="section">
+            <div class="section-header">
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <h2>דגשים ואזהרות</h2>
+            </div>
+            <ul class="list-items">
+                <li><i class="fa-solid fa-glass-water"></i> <div><strong>רק מים:</strong> הקפידו על שתיית מים בלבד (לא קרים מדי). כל משקה אחר עלול להזיק.</div></li>
+                <li><i class="fa-solid fa-ban"></i> <div><strong>עישון ומסטיק:</strong> אין לעשן או ללעוס מסטיק בזמן הלבישה.</div></li>
+                <li><i class="fa-solid fa-sun"></i> <div><strong>חום:</strong> הגנו על הקשתיות משמש ישירה או מכל מקור חום אחר.</div></li>
+                <li><i class="fa-solid fa-shield-dog"></i> <div><strong>בטיחות:</strong> שמרו את הקשתיות מאוחסנות בבטחה, הרחק מילדים או בעלי חיים.</div></li>
+                <li><i class="fa-solid fa-kit-medical"></i> <div><strong>אלרגיות:</strong> במקרים נדירים עלולה להתפתח אלרגיה לפלסטיק. אם זה קורה, הפסיקו שימוש ופנו לרופא מייד.</div></li>
+            </ul>
+            <div class="emphasis-box" style="background-color: #f8f9fa; border-color: var(--pyoor-text);">
+                <strong>אל תזרקו קשתיות קודמות!</strong> שמרו אותן במארז המקורי למקרה שאחת תאבד ותזדקקו לגיבוי זמני עד לייצור חדשה.
+            </div>
+        </div>
+
+        <!-- Section: Retainers -->
+        <div class="section" id="retainers">
+            <div class="section-header">
+                <i class="fa-solid fa-shield-heart"></i>
+                <h2>שומרים על התוצאה</h2>
+            </div>
+
+            <h3>לסיום: מה מחכה לכם בסוף הדרך? (שלב הריטיינרים)</h3>
+            <p>אולי ראיתם במארז שלכם כמה שקיות שנראות קצת אחרת. אלו הם הריטיינרים (בעברית: סדי קיבוע).</p>
+            <p style="margin-top: 15px;"><strong>איך מזהים אותם?</strong> הריטיינרים נראים כמעט בדיוק כמו קשתיות הטיפול, אבל הם מסומנים באופן בולט כדי שלא תתבלבלו: הם מסומנים באות R או X.</p>
+
+            <h3>מה עושים איתם עכשיו?</h3>
+            <p>כלום! כרגע הם רק מחכים לכם במארז. אל תפתחו ואל תשתמשו בהם עד שננחה אתכם שהגעתם לרגע המיוחל.</p>
+            <p style="margin-top: 15px;">אל דאגה: ברגע שתסיימו את הקשתית האחרונה של הטיפול, אנחנו נשלח לכם מדריך נפרד ומפורט שיסביר בדיוק איך להשתמש בריטיינרים, איך לנקות אותם ואיך לשמור על התוצאה.</p>
+
+            <div class="grid-info">
+                <div class="grid-card">
+                    <i class="fa-solid fa-hourglass-start"></i>
+                    <strong>3 חודשים ראשונים</strong>
+                    <p>18-21 שעות ביום</p>
+                </div>
+                <div class="grid-card">
+                    <i class="fa-solid fa-bed"></i>
+                    <strong>המשך הדרך</strong>
+                    <p>12 שעות (בלילה)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Keep in Touch -->
+        <div class="keep-in-touch">
+            <h2>שמרו על קשר!</h2>
+            <p>(אנחנו בטוח נשמור איתכם)</p>
+            <p style="margin-top: 15px;">שימו לב להודעות מאתנו (מיילים, מסרונים או שיחות). אנחנו מלווים אתכם לאורך כל הדרך כדי לוודא שהכל זורם כמו שצריך.</p>
+        </div>
+
+    </div>
+
+    <!-- Minimal Footer -->
+    <footer class="footer-minimal" id="contact">
+        <h2>אנחנו כאן לכל שאלה</h2>
+        <p class="sub-text">הצוות המקצועי שלנו זמין עבורך</p>
+
+        <div class="contact-grid">
+            <a href="tel:033036240" class="contact-item">
+                <i class="fa-solid fa-phone"></i>
+                03-3036240
+            </a>
+            <a href="https://wa.me/97233036240" class="contact-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span class="whatsapp-tag">WhatsApp</span>
+                03-3036240
+            </a>
+            <a href="mailto:smile@pyoor.co.il" class="contact-item">
+                <i class="fa-solid fa-envelope"></i>
+                smile@pyoor.co.il
+            </a>
+        </div>
+    </footer>
+
+    <!-- Navigation -->
+    <nav class="bottom-nav">
+        <a href="#usage" class="nav-link"><i class="fa-solid fa-hand-pointer"></i><span>שימוש</span></a>
+        <a href="#hygiene" class="nav-link"><i class="fa-solid fa-soap"></i><span>ניקיון</span></a>
+        <a href="#retainers" class="nav-link"><i class="fa-solid fa-shield-halved"></i><span>שימור</span></a>
+        <a href="#contact" class="nav-link"><i class="fa-solid fa-headset"></i><span>תמיכה</span></a>
+    </nav>
+
+</body>
+</html>
