@@ -40,12 +40,17 @@
 
         header {
             background-color: var(--white);
-            padding: 15px 20px;
+            padding: 20px 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
+        }
+
+        .header-logo {
+            height: 60px;
+            width: auto;
         }
 
         .container {
@@ -125,17 +130,27 @@
         }
 
         .list-items li {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             display: flex;
-            gap: 14px;
+            gap: 16px;
             font-size: 1.1rem;
+            align-items: flex-start;
         }
 
-        .list-items i {
-            color: var(--pyoor-pink);
-            font-size: 1.1rem;
-            margin-top: 5px;
+        .list-item-img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
             flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .section-img {
+            width: 75%;
+            border-radius: 16px;
+            margin: 25px auto 0;
+            display: block;
+            box-shadow: var(--shadow);
         }
 
         strong {
@@ -149,42 +164,6 @@
             margin: 30px 0;
             border-radius: 4px 16px 16px 4px;
             font-weight: 600;
-        }
-
-        .info-card {
-            background: #F8F9FA;
-            border-radius: 16px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border-color);
-        }
-
-        .grid-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .grid-card {
-            padding: 25px 15px;
-            text-align: center;
-            border: 1.5px solid var(--border-color);
-            border-radius: 20px;
-            background: var(--white);
-        }
-
-        .grid-card i {
-            font-size: 2.2rem;
-            color: var(--pyoor-pink);
-            margin-bottom: 12px;
-            display: block;
-        }
-
-        .grid-card strong {
-            display: block;
-            margin-bottom: 5px;
-            color: var(--pyoor-pink);
         }
 
         /* Navigation */
@@ -216,7 +195,6 @@
         .nav-link i { font-size: 1.3rem; margin-bottom: 4px; }
         .nav-link:hover { color: var(--pyoor-pink); }
 
-        /* Keep in Touch */
         .keep-in-touch {
             padding: 50px 20px;
             background-color: var(--bg-soft);
@@ -225,14 +203,6 @@
             margin: 40px 0;
         }
 
-        .keep-in-touch h2 {
-            font-family: 'Heebo';
-            font-weight: 800;
-            color: var(--pyoor-pink);
-            margin-bottom: 15px;
-        }
-
-        /* Minimal Footer Styling */
         .footer-minimal {
             background-color: #F8F9FA;
             padding: 60px 20px 80px;
@@ -249,19 +219,13 @@
             color: var(--pyoor-text);
         }
 
-        .footer-minimal p.sub-text {
-            color: #888;
-            font-size: 1rem;
-            margin-bottom: 35px;
-        }
-
         .contact-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             max-width: 550px;
-            margin: 0 auto;
+            margin: 25px auto 0;
         }
 
         .contact-item {
@@ -279,63 +243,27 @@
             transition: var(--transition);
         }
 
-        .contact-item i {
-            color: var(--pyoor-pink);
-            font-size: 1.2rem;
-        }
-
-        .contact-item:hover {
-            border-color: var(--pyoor-pink);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
-
-        .whatsapp-tag {
-            background: #25D366;
-            color: white;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            margin-right: 5px;
-        }
+        .contact-item i { color: var(--pyoor-pink); font-size: 1.2rem; }
+        .whatsapp-tag { background: #25D366; color: white; padding: 2px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-right: 5px; }
 
         @media (max-width: 480px) {
             .contact-grid { flex-direction: column; align-items: stretch; }
             .contact-item { justify-content: center; }
-        }
-
-        .list-item-img {
-            width: 44px;
-            height: 44px;
-            object-fit: contain;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .section-img {
-            width: 65%;
-            border-radius: 16px;
-            margin: 20px auto 0;
-            display: block;
-        }
-
-        .header-logo {
-            height: 60px;
-            width: auto;
+            .section-img { width: 95%; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="images/logo.png" alt="pyoor" class="header-logo">
+        <img src="logo_pyoor_finish-02 (002)11111_logo100.png" alt="pyoor" class="header-logo">
     </header>
 
     <div class="container">
-
+        
         <div class="welcome-hero">
             <h1>החיוך שלך מתחיל כאן</h1>
-            <p>הקשתיות השקופות של <strong>pyoor</strong> כבר אצלכם בידיים. הנה כל מה שצריך לדעת כדי לעבור את התהליך בכיף ולהגיע לתוצאה מושלמת.</p>
+            <p>הקשתיות השקופות של <strong>pyoor</strong> כבר אצלכם בידיים. הנה כל מה שצריך לדעת כדי לעבור את התהליך <strong>בהצלחה</strong> ולהגיע לתוצאה מושלמת.</p>
         </div>
 
         <!-- Section: Box Contents -->
@@ -345,54 +273,67 @@
                 <h2>מה במארז שלך?</h2>
             </div>
             <ul class="list-items">
-                <li><img src="images/11.png" alt="" class="list-item-img"> <div><strong>קופסת פלסטיק:</strong> הבית של הקשתיות. הקפידו לאחסן אותן שם כשהן לא בפה.</div></li>
-                <li><img src="images/22.png" alt="" class="list-item-img"> <div><strong>שקיות ממוספרות:</strong> כל שקית מסודרת לפי סדר הטיפול (1 והלאה).</div></li>
-                <li><img src="images/33.png" alt="" class="list-item-img"> <div><strong>שקית RETAINERS:</strong> מסומנת ב-X - אלו המשמרים לסיום הטיפול בלבד.</div></li>
-                <li><img src="images/44.png" alt="" class="list-item-img"> <div><strong>CHEWY (נשכן):</strong> גליל סיליקון שמסייע בהצמדת הקשתיות לשיניים.</div></li>
-                <li><img src="images/55.png" alt="" class="list-item-img"> <div><strong>מסיר קשתיות:</strong> מתחילים מהשיניים הטוחנות (האחוריות ביותר). אל תנסו לשלוף מהשיניים הקדמיות קודם – זה עלול לעקם או לסדוק את הפלסטיק של הקשתית. הכניסו את הוו של המכשיר בין הקשתית לשן בצד הפנימי (הצד שקרוב ללשון או לחך).</div></li>
+                <li><img src="images/11.png" alt="קופסת פלסטיק" class="list-item-img"> <div><strong>קופסת פלסטיק:</strong> הבית של הקשתיות. הקפידו לאחסן אותן שם כשהן לא בפה.</div></li>
+                <li><img src="images/22.png" alt="שקיות ממוספרות" class="list-item-img"> <div><strong>שקיות ממוספרות:</strong> כל שקית מסודרת לפי סדר הטיפול (1 והלאה).</div></li>
+                <li><img src="images/33.png" alt="שקית ריטיינרים" class="list-item-img"> <div><strong>שקית RETAINERS:</strong> מסומנת ב-X - אלו המשמרים לסיום הטיפול בלבד.</div></li>
+                <li><img src="images/44.png" alt="נשכן" class="list-item-img"> <div><strong>CHEWY (נשכן):</strong> גליל סיליקון שמסייע בהצמדת הקשתיות לשיניים.</div></li>
+                <li><img src="images/55.png" alt="משייף/מסיר" class="list-item-img"> <div><strong>אביזרי עזר:</strong> במארז תמצאו אביזרים המסייעים להסרה נוחה של הקשתיות או לשיוף עדין של קצוות במידת הצורך.</div></li>
             </ul>
         </div>
 
-        <!-- Section: Usage -->
+        <!-- Section: Instructions for Use -->
+        <div class="section" id="instructions">
+            <div class="section-header">
+                <i class="fa-solid fa-list-check"></i>
+                <h2>הוראת שימוש בקשתיות השקופות</h2>
+            </div>
+            <ul class="list-items">
+                <li><i class="fa-solid fa-calendar-check"></i> <div>להקפיד על לבישת הקשתיות כל יום (כל סט למשך 10 ימים ברציפות).</div></li>
+                <li><i class="fa-solid fa-clock"></i> <div>הקפדה על לבישת הקשתיות במשך 22 שעות ביום (כולל בזמן השינה כמובן).</div></li>
+                <li><i class="fa-solid fa-teeth"></i> <div>להקפיד ללבוש את הקשתיות בהתאם להנחיות ולוודא שהן יושבות על השיניים באופן תקין.</div></li>
+                <li><i class="fa-solid fa-camera"></i> <div>במהלך הטיפול ניצור קשר לבקשת תמונות למעקב ומשוב - חשוב לשתף אותנו במידע ולהיות זמינים.</div></li>
+                <li><i class="fa-solid fa-stethoscope"></i> <div>במידה ונקבעו עבורכם מועדים לביצוע IPR (שיוף עדין), יש להקפיד ולבצע טיפולים אלו בזמן.</div></li>
+                <li><i class="fa-solid fa-hashtag"></i> <div>תהיו בטוחים שאתם לובשים את הסט המתאים - מס' השלב רשום ע"ג השקית ומוטבע ע"ג הקשתית.</div></li>
+                <li><i class="fa-solid fa-moon"></i> <div>אנו ממליצים להתחיל וללבוש כל קשתית בפעם הראשונה החל מהלילה.</div></li>
+            </ul>
+            <div class="emphasis-box" style="text-align: center; border-right: none; border-bottom: 4px solid var(--pyoor-pink);">
+                האחריות להצלחת הטיפול בידיים שלך!
+            </div>
+        </div>
+
+        <!-- Section: Usage Details -->
         <div class="section" id="usage">
             <div class="section-header">
-                <i class="fa-solid fa-teeth-open"></i>
-                <h2>הנחיות שימוש</h2>
+                <i class="fa-solid fa-hand-pointer"></i>
+                <h2>איך להכניס ולהסיר?</h2>
             </div>
-            <p style="margin-bottom: 15px;"><i class="fa-solid fa-soap" style="color: var(--pyoor-pink); margin-left: 8px;"></i> <strong>חשוב:</strong> שטפו את הידיים במים וסבון לפני הכנסת הקשתיות.</p>
-
+            
             <h3>איך מכניסים?</h3>
-            <p>הניחו את הקשתית מעל השיניים הקדמיות. לאחר מכן, הפעילו לחץ שווה בעזרת קצות האצבעות על השיניים האחוריות עד שהקשתית מחליקה למקומה.</p>
+            <p>הניחו את הקשתית מעל השיניים הקדמיות. לאחר מכן, הפעילו לחץ שווה בעזרת קצות האצבעות על השיניים האחוריות עד שהקשתית מחליקה למקומה באופן מלא.</p>
             <img src="images/77.png" alt="הכנסת קשתית" class="section-img">
-
+            
             <div class="emphasis-box">
-                <strong>טיפ מקצועי:</strong>
-                <p style="margin-top: 10px;">עם המעבר לקשתיות חדשות, ייתכן שיופיע רווח קטן בין הקשתית לשיניים. כדי להבטיח התאמה מקסימלית ותהליך יישור אפקטיבי, יש לפעול לפי ההנחיות הבאות:</p>
-                <ul style="margin-top: 15px; padding-right: 20px; list-style: disc;">
-                    <li style="margin-bottom: 10px;"><strong>ב-24 השעות הראשונות:</strong> יש להשתמש בנשכן (Chewy) המצורף למארז, או בפיסת צמר גפן. יש לנשוך את האביזר בין הקשתיות למשך 3 שעות במצטבר לאורך היום.</li>
-                    <li><strong>בהמשך הדרך:</strong> במידת הצורך, מומלץ לחזור על הפעולה במהלך שלושת הימים הראשונים להחלפת הקשתית.</li>
-                </ul>
-                <img src="images/88.png" alt="שימוש בנשכן" class="section-img">
+                <strong>טיפ מקצועי (Chewy):</strong> ב-24 השעות הראשונות של כל סט חדש, השתמשו בנשכן למשך כ-3 שעות במצטבר כדי להבטיח התאמה מקסימלית.
+                <img src="images/88.png" alt="שימוש בנשכן" class="section-img" style="width: 50%; margin-top: 15px;">
             </div>
 
             <h3>איך מסירים?</h3>
-            <p>השתמשו בקצות האצבעות בלבד. התחילו מהצד הפנימי של השיניים האחוריות, שחררו צד אחד ואז את השני.</p>
+            <p>יש להשתמש <strong>בקצות האצבעות בלבד</strong>. התחילו מהצד הפנימי של השיניים האחוריות, שחררו צד אחד ואז את השני. יש להשתמש בקצות האצבעות כדי להסיר את הקשתיות החל מהשיניים האחוריות, צד אחד ואז הצד השני.</p>
+            <p style="margin-top: 12px; font-weight: 700; color: var(--pyoor-pink);">חשוב - אין להשתמש בחפץ כלשהו כדי להסיר את הקשתיות ואין להפעיל לחץ חזק מידי שעשוי לכופף או לסובב את הקשתית.</p>
             <img src="images/66.png" alt="הסרת קשתית" class="section-img">
         </div>
 
-        <!-- Section: Comfort & Adaptation -->
+        <!-- Section: Adaptation -->
         <div class="section">
             <div class="section-header">
                 <i class="fa-solid fa-face-smile-beam"></i>
                 <h2>תחושות והסתגלות</h2>
             </div>
-            <div class="info-card">
-                <p>בפעם הראשונה יתכן ותיווצר תחושה של אי נוחות מסוימת, לחץ קל או פער קטן בין הקשתית לשיניים. זה טבעי לחלוטין!</p>
-            </div>
             <ul class="list-items">
-                <li><i class="fa-solid fa-circle-info"></i> <div><strong>לחץ משתנה:</strong> הלחץ משתנה מסט לסט כי כל אחד מהם מבצע תנועה עדינה אחרת. התחושה נעלמת מהר מאוד.</div></li>
-                <li><i class="fa-solid fa-droplet-slash"></i> <div><strong>הצטברות רוק:</strong> יתכן ותחושו הצטברות רוק בימים הראשונים - תחושה זו תעבור במהרה.</div></li>
-                <li><i class="fa-solid fa-warning"></i> <div><strong>כאב חד:</strong> במידה וחשתם כאב חד או אי נוחות משמעותית, יש ליצור קשר עם הצוות שלנו או הרופא המטפל מיידית.</div></li>
+                <li><i class="fa-solid fa-circle-info"></i> <div>יתכן ובזמן הלבישה בפעם הראשונה תיווצר תחושה של אי נוחות מסוימת, לחץ קלה, או תחושה של פער קל.</div></li>
+                <li><i class="fa-solid fa-circle-info"></i> <div>הלחץ שהקשתיות מפעילות משתנה מסט לסט כי כל שלב מבצע תזוזה עדינה שונה.</div></li>
+                <li><i class="fa-solid fa-droplet"></i> <div>יתכן ותרגישו שרוק מצטבר בתוך הקשתיות - התחושה תעבור במהלך הימים הראשונים.</div></li>
+                <li><i class="fa-solid fa-triangle-exclamation"></i> <div>במידה וחשתם כאב חד או אי נוחות משמעותית, יש ליצור קשר עם הצוות באופן מידי.</div></li>
             </ul>
         </div>
 
@@ -402,72 +343,59 @@
                 <i class="fa-solid fa-sink"></i>
                 <h2>היגיינה ותחזוקה</h2>
             </div>
-
-            <h3>איך מנקים?</h3>
+            
             <ul class="list-items">
-                <li><i class="fa-solid fa-soap"></i> <div>שטפו במים פושרים וסבון נוזלי עדין וצחצחו בעדינות עם מברשת רכה.</div></li>
-                <li><i class="fa-solid fa-flask"></i> <div><strong>השריה עמוקה:</strong> ניתן להשרות בתמיסה ייעודית או בטבליות לשיניים תותבות (15-20 דקות), ולאחר מכן לשטוף היטב.</div></li>
+                <li><i class="fa-solid fa-utensils"></i> <div><strong>זמן ארוחה:</strong> בזמן אוכל או שתיה (שאינה מים) יש להסיר את הקשתיות ולהניחן בקופסה הייעודית.</div></li>
+                <li><i class="fa-solid fa-faucet"></i> <div>לאחר ההסרה, שטפו אותן היטב תחת המים, יבשו בעדינות ושמרו אותן בקופסה.</div></li>
+            </ul>
+
+            <h3>ניקוי יומיומי:</h3>
+            <ul class="list-items">
+                <li><i class="fa-solid fa-soap"></i> <div>לשטוף את הקשתיות כל בוקר וכל ערב עם מים פושרים וסבון נוזלי עדין.</div></li>
+                <li><i class="fa-solid fa-tooth"></i> <div>השתמשו במברשת שיניים רכה נוספת (לא זו שאתם מצחצחים איתה) כדי לצחצח בעדינות - מבפנים ומבחוץ.</div></li>
+                <li><i class="fa-solid fa-flask"></i> <div>ניתן להשרות בתמיסה ייעודית או בטבליות ניקוי (למשך 15-20 דקות), ולאחר מכן לשטוף היטב.</div></li>
+                <li><i class="fa-solid fa-circle-xmark"></i> <div><strong>חשוב:</strong> אל תשתמשו במים חמים, אל תשתמשו במשחת שיניים (שוחקת) ואל תנקו עם חומרי ניקוי חריפים.</div></li>
             </ul>
 
             <div class="emphasis-box">
-                <strong>היגיינת הפה:</strong> אנו ממליצים על צחצוח בוקר וערב, ושימוש בחוט דנטלי לאחר כל ארוחה ולפני לבישת הקשתיות.
+                <strong>היגיינת הפה:</strong> אנו ממליצים על צחצוח בוקר וערב, ושימוש בחוט דנטלי לאחר כל ארוחה ולפני לבישת הקשתיות. הקפידו על ביקורת אצל רופא השיניים וביקור אצל השיננית.
             </div>
-
-            <p><i class="fa-solid fa-user-doctor" style="color: var(--pyoor-pink); margin-left: 8px;"></i> הקפידו על ביקורת קבועה אצל רופא השיניים וביקור תקופתי אצל השיננית להסרת אבנית ופלאק.</p>
         </div>
 
         <!-- Section: Warnings -->
         <div class="section">
             <div class="section-header">
-                <i class="fa-solid fa-circle-exclamation"></i>
+                <i class="fa-solid fa-triangle-exclamation"></i>
                 <h2>דגשים ואזהרות</h2>
             </div>
             <ul class="list-items">
-                <li><i class="fa-solid fa-glass-water"></i> <div><strong>רק מים:</strong> הקפידו על שתיית מים בלבד (לא קרים מדי). כל משקה אחר עלול להזיק.</div></li>
-                <li><i class="fa-solid fa-ban"></i> <div><strong>עישון ומסטיק:</strong> אין לעשן או ללעוס מסטיק בזמן הלבישה.</div></li>
-                <li><i class="fa-solid fa-sun"></i> <div><strong>חום:</strong> הגנו על הקשתיות משמש ישירה או מכל מקור חום אחר.</div></li>
-                <li><i class="fa-solid fa-shield-dog"></i> <div><strong>בטיחות:</strong> שמרו את הקשתיות מאוחסנות בבטחה, הרחק מילדים או בעלי חיים.</div></li>
-                <li><i class="fa-solid fa-kit-medical"></i> <div><strong>אלרגיות:</strong> במקרים נדירים עלולה להתפתח אלרגיה לפלסטיק. אם זה קורה, הפסיקו שימוש ופנו לרופא מייד.</div></li>
+                <li><i class="fa-solid fa-glass-water"></i> <div>הקפידו רק על שתיית מים (לא קרים מידי), כל נוזל אחר עלול להזיק.</div></li>
+                <li><i class="fa-solid fa-ban"></i> <div>אל תעשנו בזמן שאתם לובשים את הקשתיות - העשן יכול להכתים אותן.</div></li>
+                <li><i class="fa-solid fa-circle-xmark"></i> <div>אין ללעוס מסטיק בזמן שלובשים את הקשתיות.</div></li>
+                <li><i class="fa-solid fa-shield-cat"></i> <div>שמרו את הקשתיות מאוחסנות בבטחה, הרחק מילדים, בעלי חיים או מקורות חום.</div></li>
+                <li><i class="fa-solid fa-kit-medical"></i> <div>במקרים נדירים עלולה להתפתח אלרגיה לפלסטיק. במקרה כזה, הפסיקו שימוש ופנו לרופא מייד.</div></li>
             </ul>
-            <div class="emphasis-box" style="background-color: #f8f9fa; border-color: var(--pyoor-text);">
-                <strong>אל תזרקו קשתיות קודמות!</strong> שמרו אותן במארז המקורי למקרה שאחת תאבד ותזדקקו לגיבוי זמני עד לייצור חדשה.
-            </div>
         </div>
 
         <!-- Section: Retainers -->
         <div class="section" id="retainers">
             <div class="section-header">
                 <i class="fa-solid fa-shield-heart"></i>
-                <h2>שומרים על התוצאה</h2>
+                <h2>שומרים על התוצאה (ריטיינרים)</h2>
             </div>
-
-            <h3>לסיום: מה מחכה לכם בסוף הדרך? (שלב הריטיינרים)</h3>
-            <p>אולי ראיתם במארז שלכם כמה שקיות שנראות קצת אחרת. אלו הם הריטיינרים (בעברית: סדי קיבוע).</p>
-            <p style="margin-top: 15px;"><strong>איך מזהים אותם?</strong> הריטיינרים נראים כמעט בדיוק כמו קשתיות הטיפול, אבל הם מסומנים באופן בולט כדי שלא תתבלבלו: הם מסומנים באות R או X.</p>
-
-            <h3>מה עושים איתם עכשיו?</h3>
-            <p>כלום! כרגע הם רק מחכים לכם במארז. אל תפתחו ואל תשתמשו בהם עד שננחה אתכם שהגעתם לרגע המיוחל.</p>
-            <p style="margin-top: 15px;">אל דאגה: ברגע שתסיימו את הקשתית האחרונה של הטיפול, אנחנו נשלח לכם מדריך נפרד ומפורט שיסביר בדיוק איך להשתמש בריטיינרים, איך לנקות אותם ואיך לשמור על התוצאה.</p>
-
-            <div class="grid-info">
-                <div class="grid-card">
-                    <i class="fa-solid fa-hourglass-start"></i>
-                    <strong>3 חודשים ראשונים</strong>
-                    <p>18-21 שעות ביום</p>
-                </div>
-                <div class="grid-card">
-                    <i class="fa-solid fa-bed"></i>
-                    <strong>המשך הדרך</strong>
-                    <p>12 שעות (בלילה)</p>
-                </div>
-            </div>
+            <p>הריטיינר שלנו עשוי מהחומר האיכותי ביותר ובעובי מיוחד של מילימטר אחד בלבד.</p>
+            <ul class="list-items" style="margin-top: 20px;">
+                <li><i class="fa-solid fa-clock-rotate-left"></i> <div>אורך חיי הריטיינר תלוי באופן השימוש ובשמירה עליו.</div></li>
+                <li><i class="fa-solid fa-calendar-check"></i> <div>אנו ממליצים להחליף את הריטיינר אחת לחצי שנה.</div></li>
+                <li><i class="fa-solid fa-box-archive"></i> <div>יש לנקות את הריטיינר לפי ההנחיות הרגילות ולאחסן בקופסה הייעודית.</div></li>
+            </ul>
         </div>
 
         <!-- Keep in Touch -->
-        <div class="keep-in-touch">
+        <div class="keep-in-touch" id="contact-info">
             <h2>שמרו על קשר!</h2>
             <p>(אנחנו בטוח נשמור איתכם)</p>
-            <p style="margin-top: 15px;">שימו לב להודעות מאתנו (מיילים, מסרונים או שיחות). אנחנו מלווים אתכם לאורך כל הדרך כדי לוודא שהכל זורם כמו שצריך.</p>
+            <p style="margin-top: 20px; font-size: 1.1rem;">אנחנו שומרים על קשר רציף לאורך הטיפול כדי לוודא שהכל זורם ומבקשים מדי פעם תמונות למעקב.</p>
         </div>
 
     </div>
@@ -475,30 +403,19 @@
     <!-- Minimal Footer -->
     <footer class="footer-minimal" id="contact">
         <h2>אנחנו כאן לכל שאלה</h2>
-        <p class="sub-text">הצוות המקצועי שלנו זמין עבורך</p>
-
         <div class="contact-grid">
-            <a href="tel:033036240" class="contact-item">
-                <i class="fa-solid fa-phone"></i>
-                03-3036240
-            </a>
-            <a href="https://wa.me/97233036240" class="contact-item">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span class="whatsapp-tag">WhatsApp</span>
-                03-3036240
-            </a>
-            <a href="mailto:smile@pyoor.co.il" class="contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                smile@pyoor.co.il
-            </a>
+            <a href="tel:033036240" class="contact-item"><i class="fa-solid fa-phone"></i> 03-3036240</a>
+            <a href="https://wa.me/97233036240" class="contact-item"><i class="fa-brands fa-whatsapp"></i> <span class="whatsapp-tag">WhatsApp</span> 03-3036240</a>
+            <a href="mailto:smile@pyoor.co.il" class="contact-item"><i class="fa-solid fa-envelope"></i> smile@pyoor.co.il</a>
         </div>
+        <img src="logo_pyoor_finish-02 (002)11111_logo100.png" alt="pyoor" class="footer-logo" onerror="this.style.display='none'">
     </footer>
 
     <!-- Navigation -->
     <nav class="bottom-nav">
+        <a href="#instructions" class="nav-link"><i class="fa-solid fa-list-check"></i><span>הוראות</span></a>
         <a href="#usage" class="nav-link"><i class="fa-solid fa-hand-pointer"></i><span>שימוש</span></a>
         <a href="#hygiene" class="nav-link"><i class="fa-solid fa-soap"></i><span>ניקיון</span></a>
-        <a href="#retainers" class="nav-link"><i class="fa-solid fa-shield-halved"></i><span>שימור</span></a>
         <a href="#contact" class="nav-link"><i class="fa-solid fa-headset"></i><span>תמיכה</span></a>
     </nav>
 
